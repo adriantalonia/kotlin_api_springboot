@@ -1,7 +1,8 @@
 package com.kotlinapi.model.entity
 
 import org.hibernate.Hibernate
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.Table
 
 @Entity
 @Table(name = "Users")
