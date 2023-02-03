@@ -21,5 +21,4 @@ data class UserRequest(
     @field:Size(min = 8, message = "Password must not be less than 8 characters")
     var password: String,
     val roles: List<Role> = mutableListOf()
-) {
-}
+)
