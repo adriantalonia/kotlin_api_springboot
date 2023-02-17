@@ -1,4 +1,4 @@
-package com.kotlinapi
+package com.kas.kotlin_api_springboot
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class KotlinApiSpringbootApplication
 
 fun main(args: Array<String>) {
-	runApplication<KotlinApiSpringbootApplication>(*args)
+    runApplication<KotlinApiSpringbootApplication>(*args)
 }

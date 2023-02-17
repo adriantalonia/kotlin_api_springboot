@@ -9,8 +9,8 @@
 
 ## Technology Stack
 - Java 11
-- Kotlin 1.6.21
-- Springboot 2.7.2
+- Kotlin 1.7.22
+- Springboot 3.0.2
 
 
 ## Development Prerequisites
