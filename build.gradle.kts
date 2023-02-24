@@ -7,6 +7,7 @@ plugins {
     kotlin("plugin.spring") version "1.7.22"
     kotlin("plugin.jpa") version "1.7.22"
     id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
+    kotlin("kapt") version "1.7.22"
 }
 
 group = "com.kas"
@@ -26,6 +27,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     runtimeOnly("org.postgresql:postgresql")
+
+    implementation("org.mapstruct:mapstruct:1.5.3.Final")
+    kapt("org.mapstruct:mapstruct-processor:1.5.3.Final")
 }
 
 tasks.withType<KotlinCompile> {
@@ -33,6 +37,13 @@ tasks.withType<KotlinCompile> {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "17"
     }
+}
+
+kapt {
+    keepJavacAnnotationProcessors = true
+    /*arguments {
+        arg("mapstruct.defaultComponentModel", "spring")
+    }*/
 }
 
 tasks.withType<Test> {
