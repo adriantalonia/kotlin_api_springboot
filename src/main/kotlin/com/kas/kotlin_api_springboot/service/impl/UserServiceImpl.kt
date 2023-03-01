@@ -15,7 +15,7 @@ class UserServiceImpl(val userRepository: UserRepository) : UserService {
 
     override fun create(user: UserRequest): UserResponse {
         val userEntity = converter.toEntity(user)
-       return converter.toResponse(userRepository.save(userEntity))
+        return converter.toResponse(userRepository.save(userEntity))
     }
 
     override fun update(user: UserRequest): UserResponse {

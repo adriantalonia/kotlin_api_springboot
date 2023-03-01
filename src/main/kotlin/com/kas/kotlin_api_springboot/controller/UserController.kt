@@ -5,6 +5,7 @@ import com.kas.kotlin_api_springboot.model.dto.response.UserResponse
 import com.kas.kotlin_api_springboot.service.UserService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -19,7 +20,7 @@ class UserController(val userService: UserService) {
     @GetMapping
     fun getUsers() {
     }
-    @PostMapping
+    @PostMapping(onsumes = { MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
     fun create(@RequestBody @Valid user: UserRequest): ResponseEntity<UserResponse> {
         val userResponse = userService.create(user)
         return ResponseEntity.status(HttpStatus.CREATED).body(userResponse)
