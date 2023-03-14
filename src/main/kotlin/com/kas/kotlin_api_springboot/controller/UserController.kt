@@ -20,7 +20,8 @@ class UserController(val userService: UserService) {
     @GetMapping
     fun getUsers() {
     }
-    @PostMapping(onsumes = { MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
+
+    @PostMapping(consumes = [ MediaType.APPLICATION_JSON_VALUE ], produces = [ MediaType.APPLICATION_JSON_VALUE ])
     fun create(@RequestBody @Valid user: UserRequest): ResponseEntity<UserResponse> {
         val userResponse = userService.create(user)
         return ResponseEntity.status(HttpStatus.CREATED).body(userResponse)
