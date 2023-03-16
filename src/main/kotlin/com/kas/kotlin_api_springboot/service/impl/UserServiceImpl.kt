@@ -19,10 +19,10 @@ class UserServiceImpl(val userRepository: UserRepository) : UserService {
     }
 
     override fun update(user: UserRequest): UserResponse {
-        TODO("Not yet implemented")
+
     }
 
     override fun delete(user: UserRequest): Void {
-        TODO("Not yet implemented")
+
     }
 }
